@@ -1,5 +1,5 @@
 require 'rspec'
-require './lib/dragon'
+require './lib/dragon.rb'
 
 RSpec.describe Dragon do
   it 'has a name' do
