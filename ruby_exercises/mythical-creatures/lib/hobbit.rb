@@ -18,4 +18,11 @@ class
     def old?
         @age >= 101
     end
+
+    def has_ring?
+        @name = 'Frodo'
+    end
+    def is_short?
+        true
+    end
 end
