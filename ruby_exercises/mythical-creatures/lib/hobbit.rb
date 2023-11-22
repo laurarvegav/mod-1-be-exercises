@@ -20,7 +20,7 @@ class
     end
 
     def has_ring?
-        @name == 'Frodo'
+        @name.downcase == 'frodo'
     end
     def is_short?
         true
