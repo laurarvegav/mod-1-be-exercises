@@ -1,6 +1,6 @@
 require'./lib/dragon'
 
-RSpec.describe Dragon do
+describe Dragon do
   it "has a name" do
     dragon = Dragon.new("Ramoth", :gold, "Lessa")
 
