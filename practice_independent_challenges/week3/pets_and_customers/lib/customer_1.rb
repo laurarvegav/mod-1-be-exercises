@@ -4,10 +4,10 @@ class Customer
                 :pets,
                 :outstanding_balance
 
-    def initialize(name, id)
-        @name = name
-        @id = id
-        @pets = []
+    def initialize(attributes)
+        @name = attributes[:name]
+        @id = attributes[:id]
+        @pets = attributes[:pets] = []
         @outstanding_balance = 0
     end
 
