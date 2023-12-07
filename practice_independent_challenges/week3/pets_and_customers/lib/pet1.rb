@@ -13,4 +13,8 @@ class Pet
     def fed?
         @fed == true
     end
+
+    def feed
+        @fed = true
+    end
 end
