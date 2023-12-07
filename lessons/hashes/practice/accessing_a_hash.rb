@@ -10,3 +10,4 @@ suitcase = {
 # 3. All of the values in this hash.
 
 # How would we get the keys of the above hash?
+suitcase.keys
