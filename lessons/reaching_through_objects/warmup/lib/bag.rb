@@ -20,9 +20,9 @@ class Bag
 
     def contains?(candy_type)
         # OPTION1
-        # @candies.any? do |candy|
-        #     candy.type == candy_type
-        # end
+        @candies.any? do |candy|
+            candy.type == candy_type
+        end
 
         # OPTION2
         # evaluation = false
