@@ -20,7 +20,7 @@ class TrickOrTreater
         @bag.count
     end
 
-    def eat
-        @bag.eat_candy
+    def eat(num=1)
+        @bag.eat_candy(num)
     end
 end
