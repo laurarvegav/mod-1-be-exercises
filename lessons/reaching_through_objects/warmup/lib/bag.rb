@@ -34,8 +34,8 @@ class Bag
         # evaluation
     end
 
-    def eat_candy
-        @candies.pop
+    def eat_candy(num)
+        @candies.pop(num)
     end
 
 end
