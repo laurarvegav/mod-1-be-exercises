@@ -21,6 +21,6 @@ class TrickOrTreater
     end
 
     def eat
-        @bag.candies.pop
+        @bag.eat_candy
     end
 end
