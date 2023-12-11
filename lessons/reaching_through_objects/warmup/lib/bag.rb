@@ -34,4 +34,8 @@ class Bag
         # evaluation
     end
 
+    def eat_candy
+        @candies.pop
+    end
+
 end
