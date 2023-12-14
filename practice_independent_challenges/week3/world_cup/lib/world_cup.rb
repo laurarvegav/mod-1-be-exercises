@@ -17,7 +17,7 @@ class WorldCup
         positionees.flatten
     end
 
-    def all_players_by_position
+    def all_positions 
         positions = []
         @teams.each do |team|
             team.players.each do |player|
@@ -28,10 +28,12 @@ class WorldCup
             positions
         end
         positions
-        
+    end
+
+    def all_players_by_position
         players_by_pos = Hash.new([])
 
-        positions.each do |position|
+        all_positions.each do |position|
             players_by_pos[position.to_sym] = active_players_by_position(position)
         end
         players_by_pos
