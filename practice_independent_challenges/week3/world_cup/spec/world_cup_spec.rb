@@ -53,7 +53,7 @@ RSpec.describe WorldCup do
         croatia.add_player(modric)
         croatia.add_player(vida)
         world_cup = WorldCup.new(2018, [france, croatia])
-        expect(world_cup.all_players_by_position).to eq({"forward":[mbappe], "midfielder":[modric], "defender":[vida]})
+        expect(world_cup.all_players_by_position).to eq({"forward":[mbappe], "midfielder":[pogba,modric], "defender":[vida]})
     end
 
 end
