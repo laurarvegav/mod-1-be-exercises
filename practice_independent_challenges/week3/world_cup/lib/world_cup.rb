@@ -18,13 +18,21 @@ class WorldCup
     end
 
     def all_players_by_position
-        players_by_pos = Hash.new({})
+        positions = []
         @teams.each do |team|
             team.players.each do |player|
-                if !players_by_pos.keys.include?(player.position)
-                    players_by_pos[player.position.to_sym] = [player]
+                if !positions.include?(player.position)
+                    positions << player.position
                 end
             end
+            positions
+        end
+        positions
+        
+        players_by_pos = Hash.new([])
+
+        positions.each do |position|
+            players_by_pos[position.to_sym] = active_players_by_position(position)
         end
         players_by_pos
     end
