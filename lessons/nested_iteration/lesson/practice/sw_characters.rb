@@ -215,6 +215,15 @@ characters = [
 # Get a unique list of the homeworlds
 
 # ["Tatooine", "Naboo", "Alderaan" ... ]
+homeworlds_list = []
+characters.each do |character|
+    if !homeworlds_list.include?(character[:"homeworld"])
+        homeworlds_list << character[:"homeworld"]
+    end
+    # require 'pry'; binding.pry
+    homeworlds_list
+end
+p homeworlds_list
 
 
 # Challenge #2
@@ -223,7 +232,14 @@ characters = [
 
 # ["Luke Skywalker", "Darth Vader", "Biggs Darklighter" ... ]
 
-
+char_w_starships = []
+characters.each do |character|
+    if character[:"starships"] != []
+        char_w_starships <<  character[:"name"]
+    end
+    char_w_starships
+end
+p char_w_starships
 
 # CHALLENGE #3
 
@@ -239,6 +255,12 @@ characters = [
 #     ...
 # }
 
+starships_per_character = Hash.new([])
+characters.each do |character|
+    starships_per_character[character[:"name"]] = character[:"starships"]
+    starships_per_character
+end
+p starships_per_character
 
 # Challenge #4 
 
@@ -251,3 +273,26 @@ characters = [
 #      ...
 #      ...
 # }
+char_per_movie = {}
+movies =[]
+chars_names = []
+
+characters.each do |character|
+    chars_names << character[:"name"]
+
+    character[:"films"].each do |film|
+        if !movies.include?(film)
+            movies <<  film
+        end
+    movies
+    end
+
+    movies.each do |movie|
+        if character[:"films"].include?(movie)
+            chars_names << character[:"name"]
+            char_per_movie[movie] = chars_names.uniq
+        end
+    end
+    char_per_movie
+end
+p char_per_movie

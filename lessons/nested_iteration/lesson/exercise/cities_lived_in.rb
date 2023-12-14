@@ -11,6 +11,17 @@ cities_lived_in = {
 # ["Philadelphia", "Fort Collins", "Seattle", "Denver", "Santa Fe", "Portland", "Lansing", "Columbus", "Austin"]
 
 
+@list_of_cities = []
+    cities_lived_in.each do |human_names,cities|
+        cities.each do |city|
+            if !@list_of_cities.include?(city)
+                @list_of_cities << city
+            end
+        end
+        @list_of_cities
+    end
+
+# p list_of_cities
 
 
 # Problem #2: 
@@ -21,6 +32,13 @@ cities_lived_in = {
 # or
 # ["Michaela", "Mike", "Alex"]
 
+lived_in_phi = []
+cities_lived_in.each do |human_name,cities|
+    if cities.include?("Philadelphia")
+    lived_in_phi << human_name.to_s.capitalize!
+    end
+end
+p lived_in_phi
 
 
 
@@ -38,3 +56,13 @@ cities_lived_in = {
 #     "Columbus => 1,
 #     "Austin" => 1
 # }
+number_of_people_per_city = Hash.new(0)
+
+cities_lived_in.each do |name,cities|
+    @list_of_cities.each do |city|
+        if cities.include?(city)
+            number_of_people_per_city[city] += 1
+        end
+    end
+end
+p number_of_people_per_city
