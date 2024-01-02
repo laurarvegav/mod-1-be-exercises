@@ -1,5 +1,6 @@
 require './spec/spec_helper'
 require './lib/ogre'
+require './lib/human'
 
 RSpec.describe Ogre do
   it 'has a name' do
@@ -84,7 +85,7 @@ RSpec.describe Ogre do
     expect(human.knocked_out?).to be true
   end
 
-  it 'apologizes and the human wakes up' do
+  it 'apologizes, the human wakes up and restarts the swing count' do
     ogre = Ogre.new('Brak')
     human = Human.new
 
@@ -94,5 +95,6 @@ RSpec.describe Ogre do
 
     ogre.apologize(human)
     expect(human.knocked_out?).to be false
+    expect(ogre.swings).to eq(0)
   end
 end
