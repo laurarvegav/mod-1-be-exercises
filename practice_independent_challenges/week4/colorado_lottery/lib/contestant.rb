@@ -21,4 +21,12 @@ class Contestant
         @game_interests << game
     end
 
+    def interested?(game)
+        @game_interests.include?(game.name)
+    end
+
+    def adult?
+        @age >= 18
+    end
+
 end
