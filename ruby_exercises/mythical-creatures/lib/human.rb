@@ -20,8 +20,12 @@ class Human
     def knock_unconscious
         @knocked_out = true
     end
-    
+
     def knocked_out?
         @knocked_out
+    end
+
+    def revive
+        @knocked_out = false
     end
 end
