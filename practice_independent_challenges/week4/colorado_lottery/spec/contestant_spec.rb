@@ -56,4 +56,36 @@ RSpec.describe Contestant do
 
         expect(alexander.game_interests).to eq(["Mega Millions", "Pick 4"])
     end
+
+    it "evaluates if contestant is interested in certain game" do
+        pick_4 = Game.new('Pick 4', 2)
+        mega_millions = Game.new('Mega Millions', 5, true)
+        alexander = Contestant.new({first_name: 'Alexander',
+                                    last_name: 'Aigiades',
+                                    age: 28,
+                                    state_of_residence: 'CO',
+                                    spending_money: 10})
+        alexander.add_game_interest('Mega Millions')
+        alexander.add_game_interest('Pick 4')
+
+        expect(alexander.interested?(pick_4)).to be true
+    end
+
+    it "evaluates if contestant is an adult" do
+        alexander = Contestant.new({first_name: 'Alexander',
+                                    last_name: 'Aigiades',
+                                    age: 28,
+                                    state_of_residence: 'CO',
+                                    spending_money: 10
+                                    })
+
+        benjamin = Contestant.new({ first_name: 'Benjamin',
+                                    last_name: 'Franklin',
+                                    age: 17,
+                                    state_of_residence: 'PA',
+                                    spending_money: 100
+                                    })
+        expect(alexander.adult?).to eq true
+        expect(benjamin.adult?).to eq false
+    end
 end
