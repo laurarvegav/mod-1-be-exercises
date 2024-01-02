@@ -56,4 +56,15 @@ RSpec.describe Human do
         human.knock_unconscious
         expect(human.knocked_out?).to be true
     end
+
+    it 'can revive' do
+        human = Human.new
+        
+        human.knock_unconscious
+        expect(human.knocked_out?).to be true
+
+        human.revive
+        expect(human.knocked_out?).to be false
+
+    end
 end
