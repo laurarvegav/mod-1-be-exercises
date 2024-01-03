@@ -3,6 +3,7 @@ require "pry"
 
 
 class User
+  @@users = []
   attr_reader :name
   def initialize(name)
     @name = name
@@ -17,7 +18,17 @@ class User
   def self.create_multiple(users)
     users.map do |user|
       new_user = User.new(user[:name])
+      @@users << new_user
       #binding.pry ## What is new_user? What properties does it have?
     end
+    @@users
+  end
+
+  def self.count_users
+    @@users.length
+  end
+
+  def change_name
+    @name = "ChangedName"
   end
 end
