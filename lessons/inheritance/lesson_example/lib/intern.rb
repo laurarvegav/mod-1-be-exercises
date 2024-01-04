@@ -1,8 +1,9 @@
+require './lib/employee'
+
 class Intern
-  attr_reader :base_salary
   
-  def initialize(base_salary)
-    @base_salary = base_salary
+  def initialize(name, id, base_salary, bonus = 0)
+    super
   end
 
   def get_coffee

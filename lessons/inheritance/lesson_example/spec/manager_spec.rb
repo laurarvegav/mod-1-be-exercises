@@ -8,7 +8,7 @@ RSpec.describe Manager do
     end
 
     it "has base_salary, per_team_rate, and departments attributes" do
-      manager = Manager.new(12)
+      manager = Manager.new("Igor", 13, 12)
       expect(manager.base_salary).to eq(12)
       expect(manager.per_team_rate).to eq 5
       expect(manager.departments).to be_instance_of Array
