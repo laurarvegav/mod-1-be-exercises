@@ -16,4 +16,16 @@ class Activity
 
         @participants
     end
+
+    def split
+        (@total_cost / (@participants.count))
+    end
+
+    def owed
+        owed = {}
+        @participants.each do |name,payment|
+            owed[name] = split - payment
+        end
+        owed
+    end
 end
