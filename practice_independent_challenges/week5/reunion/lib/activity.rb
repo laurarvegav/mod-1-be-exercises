@@ -22,9 +22,9 @@ class Activity
     end
 
     def owed
-        owed = {}
+        owed = Hash.new(0)
         @participants.each do |name,payment|
-            owed[name] = split - payment
+            owed[name] += split - payment
         end
         owed
     end
